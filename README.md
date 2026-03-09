@@ -30,3 +30,10 @@ Brief description of the project
 * **Constants**: Use `UPPER_SNAKE_CASE`: `MAX_STUDENT`...
 * **File**: Match with class name: `Student.txt`...
 
+## Github Workflow
+
+1. Switch to your branch
+2. Coding
+3. `Commit` your work
+4. `Push` to your branch
+5. Open a `Pull Request`
