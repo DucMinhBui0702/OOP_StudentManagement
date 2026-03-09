@@ -46,7 +46,7 @@ Brief description of the project
 ### Branches
 
 * **Long**: dev-student-course
-* **Long**: dev-enrollment
+* **Phong**: dev-enrollment
 * **An**: dev-system
 
 ### Sync with main
