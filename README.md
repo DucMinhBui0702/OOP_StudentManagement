@@ -43,6 +43,12 @@ Brief description of the project
 4. `Push` to your branch
 5. Open a `Pull Request`
 
+### Branches
+
+* **Long**: dev-student-course
+* **Long**: dev-enrollment
+* **An**: dev-system
+
 ### Sync with main
 
 1. Switch to your branch
