@@ -30,6 +30,11 @@ Brief description of the project
 * **Constants**: Use `UPPER_SNAKE_CASE`: `MAX_STUDENT`...
 * **File**: Match with class name: `Student.txt`...
 
+### Technic
+
+* Use smart pointers `unique_ptr` `shared_ptr`
+* Follow RAII principles
+
 ## Github Workflow
 
 1. Switch to your branch
