@@ -37,3 +37,10 @@ Brief description of the project
 3. `Commit` your work
 4. `Push` to your branch
 5. Open a `Pull Request`
+
+### Sync with main
+
+1. Switch to your branch
+2. Fetch origin: to update from GitHub Web
+3. Branch -> Choose a branch to merge into -> main
+4. Push origin
