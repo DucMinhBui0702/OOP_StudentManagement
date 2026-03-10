@@ -18,7 +18,6 @@ bool editStudent(std::vector<Student>& students, int id, const Student& newStude
             s.setStudentName(newStudent.getStudentName());
             s.setStudentAge(newStudent.getStudentAge());
             s.setStudentMajor(newStudent.getStudentMajor());
-            s.setStudentGPA(newStudent.getStudentGPA());
             s.setStudentNumber(newStudent.getStudentNumber());
             return true;
         }
