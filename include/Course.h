@@ -13,7 +13,7 @@ private:
 public:
     // Constructor
     Course();
-    Course(int code, std::string title, int credits);
+    Course(int code, const std::string& title, int credits);
 
     // Getters
     int getCourseCode() const;
@@ -22,7 +22,8 @@ public:
 
     // Setters
     void setCourseCode(int code);
-    void setCourseTitle(std::string title);
+    //  Thêm const và & để tránh copy chuỗi vô ích
+    void setCourseTitle(const std::string& title); 
     void setCourseCreditHours(int credits);
 
     // Display
