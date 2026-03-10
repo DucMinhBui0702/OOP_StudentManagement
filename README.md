@@ -32,6 +32,7 @@ Brief description of the project
 
 ### Technic
 
+* Don't use `namespace std` except in main.cpp
 * Use smart pointers `unique_ptr` `shared_ptr`
 * Follow RAII principles
 
