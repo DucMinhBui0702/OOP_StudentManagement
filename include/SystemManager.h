@@ -1,68 +1,35 @@
-#ifndef SYSTEM_HEADER_H
-#define SYSTEM_HEADER_H
-#include "include/Course.h"
-#include "include/Student.h"
-#include "include/Enrollment.h"    
-#include <iostream>
+#ifndef SYSTEM_MANAGER_H
+#define SYSTEM_MANAGER_H
+
 #include <vector>
-#include <string>
-#include <algorithm> 
-// Khai báo các hàm cho Student
 
-// Thêm một sinh viên mới
+// Include các file, giả sử chúng nằm trong thư mục con "include":
+#include "Student.h"
+#include "Course.h"
+#include "Enrollment.h"
+
+// Khai báo trước (tùy chọn nhưng là một thói quen tốt)
+class Student;
+class Course;
+class Enrollment;
+
+// Khai báo hàm
 void addStudent(std::vector<Student>& students, const Student& student);
-
-// Chỉnh sửa thông tin sinh viên
-bool editStudent(std::vector<Student>& students, int id, const Student& newStudent);
-
-// Tìm kiếm sinh viên theo ID
+bool editStudent(std::vector<Student>& students, int id, const Student& newStudent); // Đã sửa lỗi chính tả
 Student* searchStudent(std::vector<Student>& students, int id);
-
-// Xóa sinh viên theo ID
 bool deleteStudent(std::vector<Student>& students, int id);
-
-// Sắp xếp danh sách sinh viên (ví dụ, theo ID)
 void sortStudents(std::vector<Student>& students);
 
-
-
-
-// Khai báo các hàm cho Course
-
-// Thêm một khóa học mới
 void addCourse(std::vector<Course>& courses, const Course& course);
-
-// Chỉnh sửa thông tin khóa học
-bool editCourse(std::vector<Course>& courses, int id, const Course& newCourse);
-
-// Tìm kiếm khóa học theo ID
-Course* searchCourse(std::vector<Course>& courses, int id);
-
-// Xóa khóa học theo ID
-bool deleteCourse(std::vector<Course>& courses, int id);
-
-// Sắp xếp danh sách khóa học (ví dụ, theo ID)
+bool editCourse(std::vector<Course>& courses, int code, const Course& newCourse);
+Course* searchCourse(std::vector<Course>& courses, int code);
+bool deleteCourse(std::vector<Course>& courses, int code);
 void sortCourses(std::vector<Course>& courses);
 
+bool registerEnrollment(Enrollment& enrollment, const std::vector<Student>& students, const std::vector<Course>& courses, int studentId, int courseCode); // Đã sửa và hoàn thành khai báo
+bool deleteEnrollment(Enrollment& enrollment, int studentId, int courseCode);
+std::vector<Enrollment::StudentEnrollment> searchEnrollmentsByStudent(const Enrollment& enrollment, int studentId);
+std::vector<Enrollment::StudentEnrollment> searchEnrollmentsByCourse(const Enrollment& enrollment, int courseCode);
+void printEnrollments(const Enrollment& enrollment);
 
-
-
-
-// Khai báo các hàm cho Enrollment
-
-// Đăng ký sinh viên vào một khóa học
-bool registerEnrollment(std::vector<Enrollment>& enrollments, int student_id, int course_id);
-
-// Hủy đăng ký sinh viên khỏi một khóa học
-bool deleteEnrollment(std::vector<Enrollment>& enrollments, int student_id, int course_id);
-
-// Tìm kiếm các enrollment của một sinh viên
-std::vector<Enrollment> searchEnrollmentsByStudent(const std::vector<Enrollment>& enrollments, int student_id);
-
-// Tìm kiếm các enrollment của một khóa học
-std::vector<Enrollment> searchEnrollmentsByCourse(const std::vector<Enrollment>& enrollments, int course_id);
-
-// In ra danh sách enrollment
-void printEnrollments(const std::vector<Enrollment>& enrollments);
-
-#endif 
+#endif
