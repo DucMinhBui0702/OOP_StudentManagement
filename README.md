@@ -110,10 +110,10 @@ Brief description of the project
 
         double m_courseGrade;
 
-        CourseEnrollment();
     }
 
 * **Functions**:
+    + CourseEnrollment();
     + void enrollStudent();
     + double getCourseGrade();
     + double getStudentGPA();
