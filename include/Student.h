@@ -6,35 +6,34 @@
 
 class Student {
 private:
-    int m_studentID;
+    std::string m_studentID;     
     std::string m_studentName;
-    int m_studentAge;
+    int m_studentBirthYear;            
     std::string m_studentMajor;
-    float m_studentGPA;
+    double m_studentGPA;        
     std::string m_studentNumber;
 
 public:
-    // Constructor
     Student();
-    Student(int id, std::string name, int age, std::string major, float gpa, std::string phone);
+    Student(const std::string& id, const std::string& name, int birthYear, 
+            const std::string& major, double gpa, const std::string& phone);
 
     // Getters
-    int getStudentID() const;
+    std::string getStudentID() const;
     std::string getStudentName() const;
-    int getStudentAge() const;
+    int getStudentBirthYear() const;    // Hàm lấy năm sinh
     std::string getStudentMajor() const;
-    float getStudentGPA() const;
+    double getStudentGPA() const;
     std::string getStudentNumber() const;
 
-    // Setters
-    void setStudentID(int id);
-    void setStudentName(std::string name);
-    void setStudentAge(int age);
-    void setStudentMajor(std::string major);
-    void setStudentGPA(float gpa);
-    void setStudentNumber(std::string phone);
+    // Setters - Đã sửa thành const std::string& để tối ưu bộ nhớ
+    void setStudentID(const std::string& id);
+    void setStudentName(const std::string& name);
+    void setStudentBirthYear(int birthYear);
+    void setStudentMajor(const std::string& major);
+    void setStudentGPA(double gpa);
+    void setStudentNumber(const std::string& phone);
 
-    // Display
     void displayStudentInfo() const;
 };
 
