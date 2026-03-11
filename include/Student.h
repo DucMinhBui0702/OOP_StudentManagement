@@ -5,12 +5,16 @@
 #include <string>
 
 class Student {
+    
+    friend class Enrollment;
+    friend class SystemManager;
+
 private:
     std::string m_studentID;
     std::string m_studentName;
-    int m_studentBirthYear;      // Đã đổi tên
+    int m_studentBirthYear;
     std::string m_studentMajor;
-    double m_studentGPA;         // Kiểu double
+    double m_studentGPA;
     std::string m_studentNumber;
 
 public:
@@ -22,10 +26,11 @@ public:
     std::string getStudentID() const;
     std::string getStudentName() const;
     int getStudentBirthYear() const;
+    std::string getStudentMajor() const; // Đã thêm
     double getStudentGPA() const;
     std::string getStudentNumber() const;
 
-    // Setters 
+    // Setters - Dùng const string& và đã bỏ setGPA theo yêu cầu của Minh
     void setStudentID(const std::string& id);
     void setStudentName(const std::string& name);
     void setStudentBirthYear(int birthYear);
