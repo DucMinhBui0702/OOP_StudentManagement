@@ -1,0 +1,28 @@
+# Tên file thực thi
+TARGET = bin/main.exe
+
+# Trình biên dịch và cấu hình
+CXX = g++
+CXXFLAGS = -std=c++17 -Isrc
+
+# Tìm tất cả file nguồn trong src/
+SRCS = $(wildcard src/*.cpp)
+
+# Lệnh mặc định
+all: prep $(TARGET) clean_temp
+
+# 1. Tạo thư mục bin nếu chưa có
+prep:
+	@if not exist bin mkdir bin
+
+# 2. Biên dịch trực tiếp từ .cpp ra .exe (không tạo file .o trung gian lưu lại)
+$(TARGET): $(SRCS)
+	$(CXX) $(CXXFLAGS) $(SRCS) -o $(TARGET)
+
+# 3. Lệnh dọn dẹp các file rác phát sinh (nếu có)
+clean_temp:
+	@echo "Build hoàn tất. File exe đã nằm trong thư mục bin/."
+
+# Lệnh xóa sạch thư mục bin khi muốn làm lại từ đầu
+clean:
+	@if exist bin rmdir /s /q bin
