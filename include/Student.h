@@ -6,7 +6,7 @@
 
 class Student {
     
-    friend class Enrollment;
+    friend class StudentEnrollment;
     friend class SystemManager;
 
 private:
