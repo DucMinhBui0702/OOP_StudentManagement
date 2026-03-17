@@ -5,8 +5,8 @@
 #include <string>
 
 class Student {
-    
-    friend class StudentEnrollment;
+    // Cho phép các lớp quản lý truy cập trực tiếp vào private members
+    friend class Enrollment;
     friend class SystemManager;
 
 private:
@@ -18,6 +18,7 @@ private:
     std::string m_studentNumber;
 
 public:
+    // Constructors
     Student();
     Student(const std::string& id, const std::string& name, int birthYear, 
             const std::string& major, double gpa, const std::string& phone);
@@ -26,18 +27,22 @@ public:
     std::string getStudentID() const;
     std::string getStudentName() const;
     int getStudentBirthYear() const;
-    std::string getStudentMajor() const; // Đã thêm
+    std::string getStudentMajor() const;
     double getStudentGPA() const;
     std::string getStudentNumber() const;
 
-    // Setters - Dùng const string& và đã bỏ setGPA theo yêu cầu của Minh
+    // Setters
     void setStudentID(const std::string& id);
     void setStudentName(const std::string& name);
     void setStudentBirthYear(int birthYear);
     void setStudentMajor(const std::string& major);
     void setStudentNumber(const std::string& phone);
 
+    // Methods
     void displayStudentInfo() const;
+    
+    // Hàm Minh yêu cầu để lưu file .txt
+    std::string toDataLine() const;
 };
 
 #endif
