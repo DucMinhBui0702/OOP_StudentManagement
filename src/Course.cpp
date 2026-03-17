@@ -47,3 +47,10 @@ void Course::displayCourseInfo() const {
               << "| " << std::setw(25) << m_courseTitle 
               << "| " << std::setw(5)  << m_courseCreditHours << " TC |" << std::endl;
 }
+// Thêm vào cuối file Course.cpp
+std::string Course::toDataLine() const {
+    // Thứ tự: Mã môn, Tên môn, Số tín chỉ
+    return std::to_string(m_courseCode) + "," + 
+           m_courseTitle + "," + 
+           std::to_string(m_courseCreditHours);
+}
