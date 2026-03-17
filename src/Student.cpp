@@ -56,3 +56,14 @@ void Student::displayStudentInfo() const {
               << "| " << std::setw(5)  << std::fixed << std::setprecision(2) << m_studentGPA 
               << "| " << std::setw(12) << m_studentNumber << " |" << std::endl;
 }
+// Thêm vào cuối file Student.cpp
+std::string Student::toDataLine() const {
+    // Thứ tự: ID, Tên, Năm sinh, Ngành, GPA, Số điện thoại
+    // Dùng dấu phẩy để Minh dễ dùng getline(ss, token, ',')
+    return m_studentID + "," + 
+           m_studentName + "," + 
+           std::to_string(m_studentBirthYear) + "," + 
+           m_studentMajor + "," + 
+           std::to_string(m_studentGPA) + "," + 
+           m_studentNumber;
+}
