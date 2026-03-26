@@ -1,32 +1,29 @@
 #ifndef COURSE_H
 #define COURSE_H
 
-#include <iostream>
 #include <string>
+#include <iostream>
 
 class Course {
 private:
-    int m_courseCode;
+    std::string m_courseCode;    // VD: "PCP291"
     std::string m_courseTitle;
     int m_courseCreditHours;
 
 public:
-    // Constructor
     Course();
-    Course(int code, const std::string& title, int credits);
+    Course(std::string code, std::string title, int credits);
 
     // Getters
-    int getCourseCode() const;
-    std::string getCourseTitle() const;
-    int getCourseCreditHours() const;
+    std::string getCourseCode() const { return m_courseCode; }
+    std::string getCourseTitle() const { return m_courseTitle; }
+    int getCourseCreditHours() const { return m_courseCreditHours; }
 
     // Setters
-    void setCourseCode(int code);
-    //  Thêm const và & để tránh copy chuỗi vô ích
-    void setCourseTitle(const std::string& title); 
+    void setCourseCode(const std::string& code);
+    void setCourseTitle(const std::string& title);
     void setCourseCreditHours(int credits);
 
-    // Display
     void displayCourseInfo() const;
 };
 

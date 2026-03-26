@@ -1,0 +1,2 @@
+SE180001|Nguyen Van Minh|20|Auto Software|9.9|0912345678
+SE180002|Tran Hoang Long|20|AI Agent|0|0987654321

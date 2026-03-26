@@ -1,40 +1,37 @@
 #ifndef STUDENT_H
 #define STUDENT_H
 
-#include <iostream>
 #include <string>
+#include <iostream>
+#include <iomanip>
 
 class Student {
-    
-    friend class StudentEnrollment;
-    friend class SystemManager;
-
 private:
-    std::string m_studentID;
+    std::string m_studentID;     // VD: "SE180001"
     std::string m_studentName;
-    int m_studentBirthYear;
+    int m_studentAge;
     std::string m_studentMajor;
-    double m_studentGPA;
-    std::string m_studentNumber;
+    float m_studentGPA;
+    std::string m_studentNumber; // Số điện thoại liên lạc
 
 public:
     Student();
-    Student(const std::string& id, const std::string& name, int birthYear, 
-            const std::string& major, double gpa, const std::string& phone);
+    Student(std::string id, std::string name, int age, std::string major, float gpa, std::string phone);
 
     // Getters
-    std::string getStudentID() const;
-    std::string getStudentName() const;
-    int getStudentBirthYear() const;
-    std::string getStudentMajor() const; // Đã thêm
-    double getStudentGPA() const;
-    std::string getStudentNumber() const;
+    std::string getStudentID() const { return m_studentID; }
+    std::string getStudentName() const { return m_studentName; }
+    int getStudentAge() const { return m_studentAge; }
+    std::string getStudentMajor() const { return m_studentMajor; }
+    float getStudentGPA() const { return m_studentGPA; }
+    std::string getStudentNumber() const { return m_studentNumber; }
 
-    // Setters - Dùng const string& và đã bỏ setGPA theo yêu cầu của Minh
+    // Setters - Truyền tham số hằng (const reference) để tránh copy vô ích (MISRA-friendly)
     void setStudentID(const std::string& id);
     void setStudentName(const std::string& name);
-    void setStudentBirthYear(int birthYear);
+    void setStudentAge(int age);
     void setStudentMajor(const std::string& major);
+    void setStudentGPA(float gpa);
     void setStudentNumber(const std::string& phone);
 
     void displayStudentInfo() const;
